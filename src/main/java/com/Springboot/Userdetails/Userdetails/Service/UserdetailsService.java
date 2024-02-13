@@ -26,9 +26,9 @@ public class UserdetailsService {
 		return userdetailsRepo.findById(id).orElse(null);
 	}
 	
-//	public Userdetails getdetailsByFirstName(String firstname) {
-//		return userdetailsRepo.findBy<firstname>.orElse(null);
-//	}
+	public Userdetails getdetailsByFirstName(String firstname) {
+		return userdetailsRepo.findByfirstName(firstname);
+	}
 	
 	public Userdetails updatedetails(Userdetails userdetails) {
 		Userdetails updateUserDetails= userdetailsRepo.findById(userdetails.getId()).orElse(null);

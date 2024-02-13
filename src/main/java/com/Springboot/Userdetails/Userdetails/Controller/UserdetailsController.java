@@ -33,10 +33,10 @@ public class UserdetailsController {
 	public Userdetails getUserDetailsById(@PathVariable int id) {
 		return userdetailsService.getdetailsById(id);
 	}
-//	@GetMapping("/getUserdetailsByFirstName/{firstname}")
-//	public Userdetails getUserdetailsByFirstName(@PathVariable String firstname) {
-//		return userdetailsService.getdetailsByFirstName(firstname);
-//	}
+	@GetMapping("/getUserdetailsByFirstName/{firstname}")
+	public Userdetails getUserdetailsByFirstName(@PathVariable String firstname) {
+		return userdetailsService.getdetailsByFirstName(firstname);
+	}
 	@PutMapping("/UpdateUserdetails")
 	public Userdetails updateUserDetails(@RequestBody Userdetails userDetails) {
 		return userdetailsService.updatedetails(userDetails);

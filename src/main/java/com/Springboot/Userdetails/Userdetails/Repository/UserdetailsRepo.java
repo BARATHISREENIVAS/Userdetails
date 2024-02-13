@@ -6,4 +6,7 @@ import com.Springboot.Userdetails.Userdetails.Entity.Userdetails;
 
 public interface UserdetailsRepo extends JpaRepository<Userdetails, Integer>{
 
+	public Userdetails findByfirstName(String firstName);
+	
+	 
 }
