@@ -26,4 +26,19 @@ public class UserdetailsService {
 		return userdetailsRepo.findById(id).orElse(null);
 	}
 	
+//	public Userdetails getdetailsByFirstName(String firstname) {
+//		return userdetailsRepo.findBy<firstname>.orElse(null);
+//	}
+	
+	public Userdetails updatedetails(Userdetails userdetails) {
+		Userdetails updateUserDetails= userdetailsRepo.findById(userdetails.getId()).orElse(null);
+		if(updateUserDetails!=null) {
+			updateUserDetails.setUserStatus(userdetails.getUserStatus());
+//			updateUserDetails.setPhoneNumber(userdetails.getPhoneNumber());
+			userdetailsRepo.save(updateUserDetails);
+			return updateUserDetails;
+		}
+		return null;
+	}
+	
 }
