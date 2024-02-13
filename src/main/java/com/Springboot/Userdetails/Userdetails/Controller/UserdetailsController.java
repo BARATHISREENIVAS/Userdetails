@@ -3,6 +3,7 @@ package com.Springboot.Userdetails.Userdetails.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,5 +40,10 @@ public class UserdetailsController {
 	@PutMapping("/UpdateUserdetails")
 	public Userdetails updateUserDetails(@RequestBody Userdetails userDetails) {
 		return userdetailsService.updatedetails(userDetails);
+	}
+	
+	@DeleteMapping("/deleteUserdetails/{id}")
+	public String deleteUserdetails(@PathVariable int id) {
+		return userdetailsService.deleteDetailsById(id);
 	}
 }

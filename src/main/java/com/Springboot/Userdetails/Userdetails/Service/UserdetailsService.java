@@ -41,4 +41,9 @@ public class UserdetailsService {
 		return null;
 	}
 	
+	public String deleteDetailsById(int id) {
+		userdetailsRepo.deleteById(id);
+		return "Deleted"+" "+id;
+	}
+	
 }
