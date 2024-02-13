@@ -1,5 +1,7 @@
 package com.Springboot.Userdetails.Userdetails.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,4 +18,12 @@ public class UserdetailsService {
 		
 		return userdetailsRepo.save(userdetails);
 	}
+	public List<Userdetails> getUserdetailsAllDetails(){
+		return userdetailsRepo.findAll();
+	}
+	
+	public Userdetails getdetailsById(int id){
+		return userdetailsRepo.findById(id).orElse(null);
+	}
+	
 }
